@@ -29,7 +29,7 @@ LogWrite "$(Get-TimeStamp): Collecting the list of disabled computers."
 $Computers = Get-ADComputer -Filter {(Enabled -eq $False)}
 
 LogWrite "$(Get-TimeStamp): Exporting list of disabled computers."
-$Computers | Export-Csv $env:windir\Temp\Logs\InactiveComputers.csv
+$Computers | Export-Csv $env:windir\Temp\Logs\DeletedComputers.csv
 
 LogWrite "$(Get-TimeStamp): Deleting disabled computers."
 ForEach ($Computer in $Computers){
